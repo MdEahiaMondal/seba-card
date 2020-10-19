@@ -1,0 +1,38 @@
+.custom_btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 27px;
+    border-radius: 5px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: #fff;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    border: 0;
+    background: #428bca;
+}
+
+.test{
+    color: #5c768d !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 14px !important;
+    padding-top: 11px;
+}
+
+@media screen and (max-width: 1000px) {
+    .someInfo{
+        text-align: center!important;
+        margin: 0 auto!important;
+        width: 100%!important;
+    }
+}
+
+@media (max-width: 992px){
+    #hero, #hero .carousel-item {
+        height: calc(100vh - 70px);
+    }
+}
