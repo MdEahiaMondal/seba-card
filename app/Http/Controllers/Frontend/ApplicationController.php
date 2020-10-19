@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class ApplicationController extends Controller
 {
+    public function basicInfo(Request $request){
+
+        $division_id = $request->division_id;
+        $district_id = $request->district_id;
+        $upazila_id = $request->upazila_id;
+        $union_id = $request->union_id;
+
+        return view('frontend.application_form.form', compact('division_id', 'district_id', 'upazila_id', 'union_id'));
+    }
+
     public function districtSelect(Request $request){
         $districts = DB::table('districts')->select( 'id', 'bn_name')->where('division_id', $request->division_id)->get();
         return $districts;
@@ -40,7 +50,21 @@ class ApplicationController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'nid_no' => 'required',
+            'father_name' => 'required',
+            'division_id' => 'required',
+            'district_id' => 'required',
+            'upazila_id' => 'required',
+            'union_id' => 'required',
+            'village_name' => 'required',
+            'word_no' => 'required',
+            'holding_no' => 'required'
+        ]);
+
+        dd($request->all());
     }
 
 

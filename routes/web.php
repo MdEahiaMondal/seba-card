@@ -13,6 +13,9 @@ use App\Http\Controllers\Frontend\ApplicationController;
 // frontend area
 Route::get('/', [FrontendController::class, 'index'])->name('welcome');
 Route::get('apply/card', [ApplicationController::class, 'create'])->name('apply.form');
+Route::post('application/form/store', [ApplicationController::class, 'store'])->name('application.store');
+Route::post('basic/info', [ApplicationController::class, 'basicInfo'])->name('basic.info');
+
 Route::get('district/select', [ApplicationController::class, 'districtSelect'])->name('district.select');
 Route::get('upazila/select', [ApplicationController::class, 'upazilaSelect'])->name('upazila.select');
 Route::get('union/select', [ApplicationController::class, 'unionSelect'])->name('union.select');
