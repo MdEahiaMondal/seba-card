@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\Division;
 use App\Models\Overseer;
 use App\Models\Slider;
 use App\Models\Union;
@@ -70,6 +71,24 @@ class HomeController extends Controller
     public function listOfApplicationsShow($id){
         $application = Application::findOrFail($id);
         return view('backend.applications.show', compact('application'));
+    }
+
+
+
+    public function listOfApplicationsActiveSearch(){
+        $divisions = Division::all();
+        return view('backend.applications.active_list_find', compact('divisions'));
+    }
+
+    public function listOfApplicationsActiveList(Request $request){
+
+        $applications = Application::where('division_id', $request->division_id)
+            ->orWhere('district_id', '=', $request->district_id)
+            ->orWhere('upazila_id', '=', $request->upazila_id)
+            ->orWhere('union_id', '=', $request->union_id)
+            ->orWhere('word_no', '=', $request->word_no)->get();
+
+        return view('backend.applications.active_list_find', compact('divisions'));
     }
 
 

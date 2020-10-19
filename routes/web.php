@@ -39,6 +39,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function (){
     // all applications
     Route::get('/applications', [HomeController::class, 'listOfApplications'])->name('applications.lists');
     Route::get('/applications/show/{id}', [HomeController::class, 'listOfApplicationsShow'])->name('applications.lists.show');
+    // active list find
+    Route::get('/applications/active/list/search', [HomeController::class, 'listOfApplicationsActiveSearch'])->name('active.application.search');
+    Route::get('/applications/active/list', [HomeController::class, 'listOfApplicationsActiveList'])->name('active.application.lists');
 
 
 });

@@ -41,12 +41,12 @@
                 <a href="{{ route('sliders.index') }}"><i class="fa fa-image"></i> <span class="nav-label">স্লাইডার</span></a>
             </li>
 
-            <li class="{{ request()->routeIs('applications.*') ? 'active' : ''  }}">
+            <li class="{{ request()->routeIs('applications.list.*') ? 'active' : ''  }}">
                 <a href="{{ route('applications.lists') }}"><i class="fa fa-image"></i> <span class="nav-label">আবেদনের তালিকা </span></a>
             </li>
 
-            <li class="{{ request()->routeIs('sliders.*') ? 'active' : ''  }}">
-                <a href="{{ route('sliders.index') }}"><i class="fa fa-image"></i> <span class="nav-label">এক্টিভ তালিকা</span></a>
+            <li class="{{ request()->routeIs('active.application.search') ? 'active' : ''  }}">
+                <a href="{{ route('active.application.search') }}"><i class="fa fa-image"></i> <span class="nav-label">এক্টিভ তালিকা</span></a>
             </li>
 
 

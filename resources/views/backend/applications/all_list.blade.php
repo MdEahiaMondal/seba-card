@@ -102,6 +102,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{ $applications->links('backend.component.pagination') }}
                     </div>
                 </div>
             </div>
