@@ -41,17 +41,20 @@
                 <a href="{{ route('sliders.index') }}"><i class="fa fa-image"></i> <span class="nav-label">স্লাইডার</span></a>
             </li>
 
-            <li class="{{ request()->routeIs('upazilas.*') ? 'active' : ''  }}">
-                <a href="{{ route('upazilas.index') }}"><i class="fa fa-universal-access"></i> <span class="nav-label">উপজেলাসমূহ</span></a>
+            <li class="{{ request()->routeIs('applications.*') ? 'active' : ''  }}">
+                <a href="{{ route('applications.lists') }}"><i class="fa fa-image"></i> <span class="nav-label">আবেদনের তালিকা </span></a>
             </li>
 
-            <li class="{{ request()->routeIs('contacts.*') ? 'active' : ''  }}">
+            <li class="{{ request()->routeIs('sliders.*') ? 'active' : ''  }}">
+                <a href="{{ route('sliders.index') }}"><i class="fa fa-image"></i> <span class="nav-label">এক্টিভ তালিকা</span></a>
+            </li>
+
+
+
+            {{--<li class="{{ request()->routeIs('contacts.*') ? 'active' : ''  }}">
                 <a href="{{ route('contacts.index')  }}"><i class="fa fa-contao"></i> <span class="nav-label">যোগাযোগ</span></a>
             </li>
-
-            <li class="{{ request()->routeIs('overseers.*') ? 'active' : ''  }}">
-                <a href="{{ route('overseers.index') }}"><i class="fa fa-users"></i> <span class="nav-label">উপদর্শক</span></a>
-            </li>
+--}}
 
         </ul>
     </div>

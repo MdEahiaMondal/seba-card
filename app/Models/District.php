@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Upazila extends Model
+class District extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['district_id','name', 'bn_name'];
-
+    protected $fillable = ['division_id','name', 'bn_name'];
 }

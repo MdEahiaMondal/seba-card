@@ -33,5 +33,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function (){
 
     Route::resource('profiles', ProfileController::class)->only(['index', 'update']);
 
+    // all applications
+    Route::get('/applications', [HomeController::class, 'listOfApplications'])->name('applications.lists');
+    Route::get('/applications/show/{id}', [HomeController::class, 'listOfApplicationsShow'])->name('applications.lists.show');
+
+
 });
 
