@@ -26,5 +26,10 @@
 <!-- Template Main JS File -->
 <script src="{{ asset('frontend') }}/js/main.js"></script>
 
+
+    @stack('script')
+
+
+
 </body>
 </html>
