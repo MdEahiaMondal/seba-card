@@ -8,12 +8,13 @@
         <div class="container">
             <form method="post" action="{{ route('application.store') }}">
                 @csrf
-                <input name="division_id" value="{{ $division_id }}" type="hidden">
-                <input name="district_id" value="{{ $district_id }}" type="hidden">
-                <input name="upazila_id" value="{{ $upazila_id }}" type="hidden">
-                <input name="union_id" value="{{ $union_id }}" type="hidden">
-
+                @method('post')
                 <div class="row">
+                    <input name="division_id" value="{{ $division_id }}" type="hidden">
+                    <input name="district_id" value="{{ $district_id }}" type="hidden">
+                    <input name="upazila_id" value="{{ $upazila_id }}" type="hidden">
+                    <input name="union_id" value="{{ $union_id }}" type="hidden">
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">নাম<span style="color: red">*</span></label>

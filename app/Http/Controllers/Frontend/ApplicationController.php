@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ApplicationRequest;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -48,23 +49,24 @@ class ApplicationController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(ApplicationRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'phone' => 'required',
-            'nid_no' => 'required',
-            'father_name' => 'required',
-            'division_id' => 'required',
-            'district_id' => 'required',
-            'upazila_id' => 'required',
-            'union_id' => 'required',
-            'village_name' => 'required',
-            'word_no' => 'required',
-            'holding_no' => 'required'
-        ]);
+        $request['money'] = 43;
+        $request['submitted_status'] = true;
+        $request['activated_status'] = true;
+        $applied = Application::create($request->all());
 
-        dd($request->all());
+        $division_id = $applied->division_id;
+        $district_id = $applied->district_id;
+        $upazila_id = $applied->upazila_id;
+        $union_id = $applied->union_id;
+
+        return view('frontend.application_form.form',
+            compact('division_id', 'district_id', 'upazila_id', 'union_id'));
+
+
+
+
     }
 
 
