@@ -34,6 +34,7 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('frontend') }}/css/style.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/coustom_style.css" rel="stylesheet">
+    <link href="{{ asset('backend') }}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
 </head>
 <body class="antialiased">

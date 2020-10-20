@@ -25,9 +25,32 @@
 
 <!-- Template Main JS File -->
 <script src="{{ asset('frontend') }}/js/main.js"></script>
+<script src="{{ asset('backend') }}/js/plugins/toastr/toastr.min.js"></script>
 
 
-    @stack('script')
+<script>
+    $(function () {
+
+        toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 2500
+        };
+
+        //Toastr message for domain event trigger
+        @if(session('success'))
+        toastr.success('{{ session('success') }}');
+        @endif
+
+        @if(session('error'))
+        toastr.error('{{ session('error') }}');
+        @endif
+    });
+</script>
+
+
+@stack('script')
 
 
 

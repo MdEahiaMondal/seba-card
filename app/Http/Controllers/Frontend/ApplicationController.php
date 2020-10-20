@@ -7,6 +7,7 @@ use App\Http\Requests\ApplicationRequest;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ApplicationController extends Controller
 {
@@ -31,7 +32,6 @@ class ApplicationController extends Controller
     }
 
     public function unionSelect(Request $request){
-        info($request);
         $unions = DB::table('unions')->select( 'id', 'bn_name')->where('upazilla_id', $request->upazila_id)->get();
         return $unions;
     }
@@ -62,10 +62,7 @@ class ApplicationController extends Controller
         $union_id = $applied->union_id;
 
         return view('frontend.application_form.form',
-            compact('division_id', 'district_id', 'upazila_id', 'union_id'));
-
-
-
+            compact('division_id', 'district_id', 'upazila_id', 'union_id'))->with('success', 'submitted');
 
     }
 

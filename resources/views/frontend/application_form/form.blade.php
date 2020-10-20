@@ -8,7 +8,7 @@
         <div class="container">
             <form method="post" action="{{ route('application.store') }}">
                 @csrf
-                @method('post')
+
                 <div class="row">
                     <input name="division_id" value="{{ $division_id }}" type="hidden">
                     <input name="district_id" value="{{ $district_id }}" type="hidden">
